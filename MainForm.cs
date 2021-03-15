@@ -31,7 +31,7 @@ namespace Laboratory
 			C = new Category("Policlinic 2");
 			D = new Diagnosis("Coronavirus 19", 945.75, C);
 
-			BinaryFormatter formatter = new BinaryFormatter();
+			/*BinaryFormatter formatter = new BinaryFormatter();
 			
 			using (FileStream fs = new FileStream("organization.dat", FileMode.OpenOrCreate))
 			{
@@ -58,7 +58,7 @@ namespace Laboratory
 
 			if (Org != null) {
 				cmbOrganization.Items.Add(Org.Name);
-			}
+			}*/
 
 			cmdCategory.Items.Add("всі");
 			cmdCategory.Items.Add("експрес");
@@ -123,10 +123,48 @@ namespace Laboratory
 		{
 
 		}
-	
-		
 
-		
+		private void MainForm_Activated(object sender, EventArgs e)
+		{
+
+			cmbOrganization.Items.Clear();
+
+			BinaryFormatter formatter = new BinaryFormatter();
+
+			using (FileStream fs = new FileStream("organization.dat", FileMode.OpenOrCreate))
+			{
+				try
+				{
+					organizationsShow = (List<Organization>)formatter.Deserialize(fs);
+
+					foreach (Organization o in organizationsShow)
+					{
+						cmbOrganization.Items.Add(o.Name);
+					}
+
+				}
+				catch (Exception ex)
+				{
+
+				}
+			}
+
+
+
+			cmbOrganization.Items.Add("ОКЛ");
+			cmbOrganization.Items.Add("Дитяча");
+			cmbOrganization.Items.Add("КДЦ");
+
+			if (Org != null)
+			{
+				cmbOrganization.Items.Add(Org.Name);
+			}
+
+
+		}
+
+
+
 	}
 	
 }

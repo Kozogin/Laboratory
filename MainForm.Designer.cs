@@ -111,7 +111,8 @@
 			this.Controls.Add(this.cmbOrganization);
 			this.Controls.Add(this.butAdd);
 			this.Name = "MainForm";
-			
+			this.Activated += new System.EventHandler(this.MainForm_Activated);
+			((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
