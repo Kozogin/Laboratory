@@ -13,85 +13,46 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Laboratory
 {
-	//public Organization Orgs { get; set; };
-
+	
 	public partial class MainForm : Form
 	{
+		private OrganizationService OrgServise;
+		private DiagnosisAllService DiaAllService;
 
-		private Organization Org;
-		private Category C;
-		private Diagnosis D;
-
-		private List<Organization> organizationsShow;
+		//private List<Organization> organizationsShow;
 
 		public MainForm()
 		{
 			InitializeComponent();
-
-			C = new Category("Policlinic 2");
-			D = new Diagnosis("Coronavirus 19", 945.75, C);
-
-			/*BinaryFormatter formatter = new BinaryFormatter();
-			
-			using (FileStream fs = new FileStream("organization.dat", FileMode.OpenOrCreate))
-			{
-				try
-				{
-					organizationsShow = (List<Organization>)formatter.Deserialize(fs);
-
-					foreach (Organization o in organizationsShow)
-					{
-						cmbOrganization.Items.Add(o.Name);
-					}
-
-				} catch (Exception ex)
-				{
-
-				}
-			}
-
-
-
-			cmbOrganization.Items.Add("ОКЛ");
-			cmbOrganization.Items.Add("Дитяча");
-			cmbOrganization.Items.Add("КДЦ");
-
-			if (Org != null) {
-				cmbOrganization.Items.Add(Org.Name);
-			}*/
-
-			cmdCategory.Items.Add("всі");
-			cmdCategory.Items.Add("експрес");
-			cmdCategory.Items.Add("органи травлення");
-			cmdCategory.Items.Add("серцево-судинні");
-
-			cmdDiagnosis.Items.Add("туберкульоз");
-			cmdDiagnosis.Items.Add(D.Name);
-			cmdDiagnosis.Items.Add("ангіна");
+			OrgServise = new OrganizationService();
+			DiaAllService = new DiagnosisAllService();
 		}
 
 		public MainForm(CreateForm f)
 		{
 			InitializeComponent();
+			OrgServise = new OrganizationService();
+			DiaAllService = new DiagnosisAllService();
 			//f.BackColor = Color.Green;
 		}
 
 		private void cmbOrganization_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			txtBPrepare.Text = cmbOrganization.Text + "  ---  (" + cmdCategory.Text + ")    " + cmdDiagnosis.Text
-				+ "     - " + D.Price + " грн. " + "       " + DateTime.Now;
+			OrgServise.ReadOrganization();
+			lblCategoryOrg.Text = OrgServise.FindByIndex(cmbOrganization.SelectedIndex).GetCategory().GetName();		
+
 		}
 
 		private void cmdCategory_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			txtBPrepare.Text = cmbOrganization.Text + "  ---  (" + cmdCategory.Text + ")    " + cmdDiagnosis.Text
-				+ "     - " + D.Price + " грн. " + "       " + DateTime.Now;
+			txtBPrepare.Text = cmbOrganization.Text + "  ---  (" + cmdDiagnosisBig.Text + ")    " + cmdDiagnosisLitt.Text
+				+ "     - " + " грн. " + "       " + DateTime.Now;
 		}
 
 		private void cmdDiagnosis_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			txtBPrepare.Text = cmbOrganization.Text + "  ---  (" + cmdCategory.Text + ")    " + cmdDiagnosis.Text
-				+ "     - " + D.Price + " грн. " + "       " + DateTime.Now + "   " + dateCalendar.Value;
+			txtBPrepare.Text = cmbOrganization.Text + "  ---  (" + cmdDiagnosisBig.Text + ")    " + cmdDiagnosisLitt.Text
+				+ "     - " + " грн. " + "       " + DateTime.Now + "   " + dateCalendar.Value;
 		}
 
 		private void butSpend_Click(object sender, EventArgs e)
@@ -114,8 +75,8 @@ namespace Laboratory
 
 		private void butAdd_Click(object sender, EventArgs e)
 		{			
-			CreateForm newForm = new CreateForm(this);
-			newForm.Show();
+			CreateForm createForm = new CreateForm(this);
+			createForm.Show();
 
 		}
 
@@ -126,45 +87,52 @@ namespace Laboratory
 
 		private void MainForm_Activated(object sender, EventArgs e)
 		{
+			dateCalendar.Value = DateTime.Now;
 
+			OrgServise.ReadOrganization();
 			cmbOrganization.Items.Clear();
-
-			BinaryFormatter formatter = new BinaryFormatter();
-
-			using (FileStream fs = new FileStream("organization.dat", FileMode.OpenOrCreate))
+			foreach (Organization o in OrgServise.GetOrganizations())
 			{
-				try
-				{
-					organizationsShow = (List<Organization>)formatter.Deserialize(fs);
-
-					foreach (Organization o in organizationsShow)
-					{
-						cmbOrganization.Items.Add(o.Name);
-					}
-
-				}
-				catch (Exception ex)
-				{
-
-				}
+				cmbOrganization.Items.Add(o.GetName());
 			}
 
-
-
-			cmbOrganization.Items.Add("ОКЛ");
-			cmbOrganization.Items.Add("Дитяча");
-			cmbOrganization.Items.Add("КДЦ");
-
-			if (Org != null)
+			DiagnosisAll diaAll = DiaAllService.ReadDiagnosis();
+			cmdDiagnosisBio.Items.Clear();
+			foreach (Diagnosis o in diaAll.GetDiagnosesBio())
 			{
-				cmbOrganization.Items.Add(Org.Name);
+				cmdDiagnosisBio.Items.Add(o.GetName());
+			}
+
+			cmdDiagnosisLitt.Items.Clear();
+			foreach (Diagnosis o in diaAll.GetDiagnosesLittle())
+			{
+				cmdDiagnosisLitt.Items.Add(o.GetName());
+			}
+
+			cmdDiagnosisBig.Items.Clear();
+			foreach (Diagnosis o in diaAll.GetDiagnosesBig())
+			{
+				cmdDiagnosisBig.Items.Add(o.GetName());
 			}
 
 
 		}
 
+		private void MainForm_Load(object sender, EventArgs e)
+		{
 
+		}
 
+		private void btnSetting_Click(object sender, EventArgs e)
+		{
+			SettingForm settingForm = new SettingForm(this);
+			settingForm.Show();
+		}
+
+		private void cmdDiagnosisBio_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 	
 }

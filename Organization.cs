@@ -9,14 +9,34 @@ namespace Laboratory
 	[Serializable]
 	class Organization
 	{
-		public string Name { get; set; }
+		private string Name { get; set; }
 
-		public string RecordDate { get; set; }
+		private DateTime RecordDate { get; set; }
 
-		public Organization(string name)
+		private Category CategoryOrg { get; set; }
+
+		public Organization() { }
+
+		public Organization(string name, Category categoryOrg)
 		{
 			this.Name = name;
-			this.RecordDate = DateTime.Now.ToString();
+			this.CategoryOrg = categoryOrg;
+			this.RecordDate = DateTime.Now;
+		}
+
+		public string GetName()
+		{
+			return Name;
+		}
+
+		public Category GetCategory()
+		{
+			return CategoryOrg;
+		}
+
+		public DateTime GetRecordDate()
+		{
+			return RecordDate;
 		}
 
 	}

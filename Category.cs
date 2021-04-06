@@ -10,11 +10,26 @@ namespace Laboratory
 	class Category
 	{
 
-		public string Name { get; set; }
+		private string Name { get; set; }
+
+		private DateTime RecordDate { get; set; }
+
+		public Category(){ }
 
 		public Category(string name)
-		{
+		{ 
 			this.Name = name;
+			this.RecordDate = DateTime.Now;
+		}
+
+		public string GetName()
+		{
+			return Name;
+		}
+
+		public DateTime GetRecordDate()
+		{
+			return RecordDate;
 		}
 
 	}

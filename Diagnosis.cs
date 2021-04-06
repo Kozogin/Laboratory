@@ -9,21 +9,31 @@ namespace Laboratory
 	[Serializable]
 	class Diagnosis
 	{
-		public string Name { get; set; }
-		public double Price { get; set; }
-		public Category CateDiagnosis { get; set; }
+		private string Name { get; set; }		
+		private string RecordDate { get; set; }		
 
-		public Diagnosis(string name, double price, Category category)
+		public Diagnosis(string name)
+		{
+			this.Name = name;			
+			this.RecordDate = DateTime.Now.ToString();			
+		}
+
+		public void SetName(string name)
 		{
 			this.Name = name;
-			this.Price = price;
-			this.CateDiagnosis = category;
+			this.RecordDate = DateTime.Now.ToString();
+		}		
+
+		public string GetName()
+		{
+			return Name;
+		}	
+
+		public string GetRecordDate()
+		{
+			return RecordDate;
 		}
 
-		public void GetInfo()
-		{
-			Console.WriteLine($"Name: {Name}  Price: {Price}");
-		}
-		
+
 	}
 }

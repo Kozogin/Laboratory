@@ -141,10 +141,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;butAdd.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>17</value>
   </data>
   <data name="cmbOrganization.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 110</value>
+    <value>26, 22</value>
   </data>
   <data name="cmbOrganization.Size" type="System.Drawing.Size, System.Drawing">
     <value>325, 24</value>
@@ -165,82 +165,82 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbOrganization.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>16</value>
   </data>
-  <data name="cmdCategory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>387, 112</value>
+  <data name="cmdDiagnosisBig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>964, 125</value>
   </data>
-  <data name="cmdCategory.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cmdDiagnosisBig.Size" type="System.Drawing.Size, System.Drawing">
     <value>325, 24</value>
   </data>
-  <data name="cmdCategory.TabIndex" type="System.Int32, mscorlib">
+  <data name="cmdDiagnosisBig.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="cmdCategory.Text" xml:space="preserve">
-    <value>Виберіть категорію</value>
-  </data>
-  <data name="&gt;&gt;cmdCategory.Name" xml:space="preserve">
-    <value>cmdCategory</value>
-  </data>
-  <data name="&gt;&gt;cmdCategory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmdCategory.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cmdCategory.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="cmdDiagnosis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>750, 112</value>
-  </data>
-  <data name="cmdDiagnosis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>325, 24</value>
-  </data>
-  <data name="cmdDiagnosis.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="cmdDiagnosis.Text" xml:space="preserve">
+  <data name="cmdDiagnosisBig.Text" xml:space="preserve">
     <value>Виберіть діагноз</value>
   </data>
-  <data name="&gt;&gt;cmdDiagnosis.Name" xml:space="preserve">
-    <value>cmdDiagnosis</value>
+  <data name="&gt;&gt;cmdDiagnosisBig.Name" xml:space="preserve">
+    <value>cmdDiagnosisBig</value>
   </data>
-  <data name="&gt;&gt;cmdDiagnosis.Type" xml:space="preserve">
+  <data name="&gt;&gt;cmdDiagnosisBig.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cmdDiagnosis.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cmdDiagnosisBig.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;cmdDiagnosis.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;cmdDiagnosisBig.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
-  <data name="butSpend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1191, 257</value>
+  <data name="cmdDiagnosisLitt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>508, 125</value>
   </data>
-  <data name="butSpend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 30</value>
+  <data name="cmdDiagnosisLitt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 24</value>
   </data>
-  <data name="butSpend.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="butSpend.Text" xml:space="preserve">
-    <value>Провести</value>
-  </data>
-  <data name="&gt;&gt;butSpend.Name" xml:space="preserve">
-    <value>butSpend</value>
-  </data>
-  <data name="&gt;&gt;butSpend.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;butSpend.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;butSpend.ZOrder" xml:space="preserve">
+  <data name="cmdDiagnosisLitt.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="cmdDiagnosisLitt.Text" xml:space="preserve">
+    <value>Виберіть діагноз</value>
+  </data>
+  <data name="&gt;&gt;cmdDiagnosisLitt.Name" xml:space="preserve">
+    <value>cmdDiagnosisLitt</value>
+  </data>
+  <data name="&gt;&gt;cmdDiagnosisLitt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmdDiagnosisLitt.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cmdDiagnosisLitt.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="butSpendBio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 378</value>
+  </data>
+  <data name="butSpendBio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 30</value>
+  </data>
+  <data name="butSpendBio.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="butSpendBio.Text" xml:space="preserve">
+    <value>Провести</value>
+  </data>
+  <data name="&gt;&gt;butSpendBio.Name" xml:space="preserve">
+    <value>butSpendBio</value>
+  </data>
+  <data name="&gt;&gt;butSpendBio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;butSpendBio.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;butSpendBio.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
   <data name="txtBResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 329</value>
+    <value>26, 564</value>
   </data>
   <data name="txtBResult.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -250,7 +250,7 @@
     <value>Vertical</value>
   </data>
   <data name="txtBResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1311, 385</value>
+    <value>1311, 229</value>
   </data>
   <data name="txtBResult.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -265,13 +265,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtBResult.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>12</value>
   </data>
   <data name="txtBPrepare.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 13.8pt</value>
   </data>
   <data name="txtBPrepare.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 178</value>
+    <value>59, 436</value>
   </data>
   <data name="txtBPrepare.Size" type="System.Drawing.Size, System.Drawing">
     <value>1185, 34</value>
@@ -289,7 +289,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtBPrepare.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>11</value>
   </data>
   <metadata name="dataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -298,7 +298,7 @@
     <value>NoControl</value>
   </data>
   <data name="dateCalendar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1152, 114</value>
+    <value>647, 16</value>
   </data>
   <data name="dateCalendar.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 22</value>
@@ -316,13 +316,433 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dateCalendar.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 16.2pt, style=Bold</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 71</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 32</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Біопсія</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 16.2pt, style=Bold</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>471, 71</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 32</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Малий операційний</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 16.2pt, style=Bold</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>968, 71</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>321, 32</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Великий операційний</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="rdoCategory1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoCategory1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 53</value>
+  </data>
+  <data name="rdoCategory1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 21</value>
+  </data>
+  <data name="rdoCategory1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="rdoCategory1.Text" xml:space="preserve">
+    <value>Категорія 1  ( до 2-х зразків)</value>
+  </data>
+  <data name="&gt;&gt;rdoCategory1.Name" xml:space="preserve">
+    <value>rdoCategory1</value>
+  </data>
+  <data name="&gt;&gt;rdoCategory1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoCategory1.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rdoCategory1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rdoCategory2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoCategory2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rdoCategory2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 94</value>
+  </data>
+  <data name="rdoCategory2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 21</value>
+  </data>
+  <data name="rdoCategory2.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="rdoCategory2.Text" xml:space="preserve">
+    <value>Категорія 2  ( до 4-х зразків)</value>
+  </data>
+  <data name="&gt;&gt;rdoCategory2.Name" xml:space="preserve">
+    <value>rdoCategory2</value>
+  </data>
+  <data name="&gt;&gt;rdoCategory2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoCategory2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rdoCategory2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rdoCategory3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoCategory3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rdoCategory3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 136</value>
+  </data>
+  <data name="rdoCategory3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 21</value>
+  </data>
+  <data name="rdoCategory3.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="rdoCategory3.Text" xml:space="preserve">
+    <value>Категорія 3  (більше 4-х зразків)</value>
+  </data>
+  <data name="&gt;&gt;rdoCategory3.Name" xml:space="preserve">
+    <value>rdoCategory3</value>
+  </data>
+  <data name="&gt;&gt;rdoCategory3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoCategory3.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rdoCategory3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 168</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>268, 186</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Вибір групи</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="rdoWith.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoWith.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rdoWith.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 79</value>
+  </data>
+  <data name="rdoWith.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 21</value>
+  </data>
+  <data name="rdoWith.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rdoWith.Text" xml:space="preserve">
+    <value>з лімфовузлами</value>
+  </data>
+  <data name="&gt;&gt;rdoWith.Name" xml:space="preserve">
+    <value>rdoWith</value>
+  </data>
+  <data name="&gt;&gt;rdoWith.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoWith.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;rdoWith.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rdoWithout.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoWithout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 37</value>
+  </data>
+  <data name="rdoWithout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 21</value>
+  </data>
+  <data name="rdoWithout.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rdoWithout.Text" xml:space="preserve">
+    <value>без лімфовузлів</value>
+  </data>
+  <data name="&gt;&gt;rdoWithout.Name" xml:space="preserve">
+    <value>rdoWithout</value>
+  </data>
+  <data name="&gt;&gt;rdoWithout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoWithout.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;rdoWithout.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>945, 178</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 133</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Тип матеріалу</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="butSpendLittle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="butSpendLittle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>621, 378</value>
+  </data>
+  <data name="butSpendLittle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 30</value>
+  </data>
+  <data name="butSpendLittle.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="butSpendLittle.Text" xml:space="preserve">
+    <value>Провести</value>
+  </data>
+  <data name="&gt;&gt;butSpendLittle.Name" xml:space="preserve">
+    <value>butSpendLittle</value>
+  </data>
+  <data name="&gt;&gt;butSpendLittle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;butSpendLittle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;butSpendLittle.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="butSpendBig.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="butSpendBig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1128, 376</value>
+  </data>
+  <data name="butSpendBig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 30</value>
+  </data>
+  <data name="butSpendBig.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="butSpendBig.Text" xml:space="preserve">
+    <value>Провести</value>
+  </data>
+  <data name="&gt;&gt;butSpendBig.Name" xml:space="preserve">
+    <value>butSpendBig</value>
+  </data>
+  <data name="&gt;&gt;butSpendBig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;butSpendBig.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;butSpendBig.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnSetting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>910, 12</value>
+  </data>
+  <data name="btnSetting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 34</value>
+  </data>
+  <data name="btnSetting.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="btnSetting.Text" xml:space="preserve">
+    <value>Параметри</value>
+  </data>
+  <data name="&gt;&gt;btnSetting.Name" xml:space="preserve">
+    <value>btnSetting</value>
+  </data>
+  <data name="&gt;&gt;btnSetting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSetting.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSetting.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cmdDiagnosisBio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 125</value>
+  </data>
+  <data name="cmdDiagnosisBio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 24</value>
+  </data>
+  <data name="cmdDiagnosisBio.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="cmdDiagnosisBio.Text" xml:space="preserve">
+    <value>Виберіть діагноз</value>
+  </data>
+  <data name="&gt;&gt;cmdDiagnosisBio.Name" xml:space="preserve">
+    <value>cmdDiagnosisBio</value>
+  </data>
+  <data name="&gt;&gt;cmdDiagnosisBio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmdDiagnosisBio.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cmdDiagnosisBio.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblCategoryOrg.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCategoryOrg.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="lblCategoryOrg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 28</value>
+  </data>
+  <data name="lblCategoryOrg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 20</value>
+  </data>
+  <data name="lblCategoryOrg.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="lblCategoryOrg.Text" xml:space="preserve">
+    <value>               </value>
+  </data>
+  <data name="&gt;&gt;lblCategoryOrg.Name" xml:space="preserve">
+    <value>lblCategoryOrg</value>
+  </data>
+  <data name="&gt;&gt;lblCategoryOrg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCategoryOrg.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblCategoryOrg.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1377, 742</value>
+    <value>1377, 823</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Вибір діагнозу</value>

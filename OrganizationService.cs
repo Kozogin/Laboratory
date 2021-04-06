@@ -11,20 +11,17 @@ namespace Laboratory
 	class OrganizationService
 	{
 
-		private List<Organization> organizations;
-		private bool fileIsPresent;
-
+		private static List<Organization> organizations;
+		
 		public OrganizationService()
 		{
 			organizations = new List<Organization>();
 		}
 
-		public void AddOrganization(String organizationStr)
+		public void AddOrganization(String organizationStr, Category category)
 		{
-			Organization organization = new Organization(organizationStr);
-			organizations.Add(organization);
-
-			
+			Organization organization = new Organization(organizationStr, category);
+			organizations.Add(organization);			
 		}
 
 		public void SaveOrganization()
@@ -32,7 +29,11 @@ namespace Laboratory
 			BinaryFormatter formatter = new BinaryFormatter();
 			using (FileStream fs = new FileStream("organization.dat", FileMode.OpenOrCreate))
 			{
-				formatter.Serialize(fs, organizations);
+				try
+				{
+					formatter.Serialize(fs, organizations);
+				}
+				catch (Exception ex) { }
 			}
 		}
 
@@ -47,9 +48,7 @@ namespace Laboratory
 					organizations = (List<Organization>)formatter.Deserialize(fs);
 				}
 				catch (Exception ex) { }
-			}
-
-			fileIsPresent = organizations == null ? false: true;
+			}			
 		}
 
 		public List<Organization> GetOrganizations()
@@ -57,9 +56,15 @@ namespace Laboratory
 			return organizations;
 		}
 
-		public bool GetFileIsPresent()
+		public Organization FindByIndex(int index)
 		{
-			return fileIsPresent;
+			Organization organization = new Organization();
+			try
+			{
+				organization = organizations[index];
+			}
+			catch (Exception ex) { }
+			return organization;
 		}
 
 	}

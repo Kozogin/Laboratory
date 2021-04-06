@@ -8,28 +8,40 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-
 namespace Laboratory
 {
 	public partial class CreateForm : Form
-	{
-
-		//private Organization Org;
+	{				
 		private OrganizationService orgService;
-			   		
+		private CategoryService catService;
+		private DiagnosisAllService diaService;
+		
 
 		public CreateForm(MainForm f)
 		{
 			InitializeComponent();
 			orgService = new OrganizationService();
+			catService = new CategoryService();
+			diaService = new DiagnosisAllService();
 			//f.BackColor = Color.Yellow;
 		}
 
-		private void CreateForm_Load(object sender, EventArgs e)
+		private void CreateForm_Activated(object sender, EventArgs e)
 		{
+			try
+			{
+				catService.ReadCategory();
+			}
+			catch (Exception ex) { }			
 
+			cmbChoiseCatOrg.Items.Clear();
+
+			List<Category> categoryShow = catService.GetCategories();
+
+			foreach (Category o in categoryShow)
+			{
+				cmbChoiseCatOrg.Items.Add(o.GetName());
+			}
 		}
 
 		private void btnCreateOrg_Click(object sender, EventArgs e)
@@ -37,21 +49,66 @@ namespace Laboratory
 			try
 			{
 				orgService.ReadOrganization();
+
 			} catch(Exception ex) { }
 
+			if (txtBCreateOrg.Text.Trim() != "")
+			{			
+				orgService.AddOrganization(txtBCreateOrg.Text.Trim(), catService.FindByIndex(cmbChoiseCatOrg.SelectedIndex));
+				orgService.SaveOrganization();
+			}
+			lblCrOrgDown.Text = txtBCreateOrg.Text.Trim();
+			txtBCreateOrg.Text = "";
 
-			/*if (orgService.GetFileIsPresent())
+		}			
+
+		private void btnCreateCategory_Click(object sender, EventArgs e)
+		{
+			try
 			{
+				catService.ReadCategory();
+			}
+			catch (Exception ex) { }
+			
+			if (txtBCreateCat.Text.Trim() != "") {
+				catService.AddCategory(txtBCreateCat.Text.Trim());
+				catService.SaveCategory();
+			}
+			lblCrCat.Text = txtBCreateCat.Text.Trim();
+			txtBCreateCat.Text = "";
 
-			}*/
-			orgService.AddOrganization(txtBCreateOrg.Text);
-			orgService.SaveOrganization();
+			cmbChoiseCatOrg.Items.Clear();
+
+			List<Category> categoryShow = catService.GetCategories();
+
+			foreach (Category o in categoryShow)
+			{
+					cmbChoiseCatOrg.Items.Add(o.GetName());
+			}
 
 		}
 
-		private void txtBCreateOrg_TextChanged(object sender, EventArgs e)
+		private void btnCreateDiagnosis_Click(object sender, EventArgs e)
 		{
+			try
+			{
+				diaService.ReadDiagnosis();
 
+			}
+			catch (Exception ex) { }
+
+			string diagnosEnter = txtBCreateDiagnosis.Text.Trim();
+			bool bio = chkBiopsy.Checked;
+			bool little = chkLittle.Checked;
+			bool big = chkBig.Checked; 
+
+			if (diagnosEnter != "")
+			{
+				diaService.AddDiagnosis(diagnosEnter, bio, little, big);
+				diaService.SaveDiagnosis();
+			}
+			lblCrDiagDown.Text = diagnosEnter;
+			txtBCreateDiagnosis.Text = "";
 		}
 	}
 }

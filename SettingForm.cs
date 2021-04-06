@@ -1,0 +1,107 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Laboratory
+{
+	public partial class SettingForm : Form
+	{
+		private CategoryService CatService;
+		private SettingLabService SetService;
+
+		public SettingForm()
+		{
+			InitializeComponent();
+			CatService = new CategoryService();
+			SetService = new SettingLabService();
+		}
+
+		public SettingForm(MainForm f)
+		{
+			InitializeComponent();
+			CatService = new CategoryService();
+			SetService = new SettingLabService();
+		}
+
+		private void Save_Click(object sender, EventArgs e)
+		{
+			Console.Write("Save begin ");
+			double p1 = 0;
+			double p2 = 0;
+			double p3 = 0;
+			double p4 = 0;
+			double p5 = 0;
+			double p6 = 0;
+
+			try
+			{
+				SetService.ReadSettingLab();
+			}
+			catch (Exception ex) { }
+
+			try
+			{				
+				p1 = Double.Parse(txtCategory1.Text);
+				p2 = Double.Parse(txtCategory2.Text);
+				p3 = Double.Parse(txtCategory3.Text);
+				p4 = Double.Parse(txtLittle.Text);
+				p5 = Double.Parse(txtBigWithout.Text);
+				p6 = Double.Parse(txtWith.Text);
+			}
+
+			catch (Exception ex) { }			
+
+			SetService.AddSettingLab(new SettingLab(CatService.FindByIndex(cmbCategoryOrg.SelectedIndex), p1, p2, p3, p4, p5, p6));
+				SetService.SaveSettingLab();			
+		}
+
+		private void SettingForm_Activated(object sender, EventArgs e)
+		{
+			CatService.ReadCategory();
+			//SetService.ReadSettingLab();
+
+			cmbCategoryOrg.Items.Clear();
+
+			foreach (Category o in CatService.GetCategories())
+			{
+				cmbCategoryOrg.Items.Add(o.GetName());
+			}
+		}
+
+		private void cmbCategoryOrg_SelectedIndexChanged(object sender, EventArgs e)
+		{			
+			CatService.ReadCategory();
+			SetService.ReadSettingLab();			
+
+			txtCategory1.Text = "";
+			txtCategory2.Text = "";
+			txtCategory3.Text = "";
+
+			txtLittle.Text = "";
+			txtBigWithout.Text = "";
+			txtWith.Text = "";
+
+			try { 
+				txtCategory1.Text = SetService.FindByCategory(cmbCategoryOrg.SelectedItem.ToString()).GetCategory1().ToString();
+				txtCategory2.Text = SetService.FindByCategory(cmbCategoryOrg.SelectedItem.ToString()).GetCategory2().ToString();
+				txtCategory3.Text = SetService.FindByCategory(cmbCategoryOrg.SelectedItem.ToString()).GetCategory3().ToString();
+
+				txtLittle.Text = SetService.FindByCategory(cmbCategoryOrg.SelectedItem.ToString()).GetLittleOperation().ToString();
+				txtBigWithout.Text = SetService.FindByCategory(cmbCategoryOrg.SelectedItem.ToString()).GetBigOperationWithout().ToString();
+				txtWith.Text = SetService.FindByCategory(cmbCategoryOrg.SelectedItem.ToString()).GetBigOperationWith().ToString();
+			}
+			catch (Exception ex) { }
+		}
+
+		private void txtCategory1_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
+}
