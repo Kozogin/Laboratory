@@ -141,7 +141,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;butAdd.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
   <data name="cmbOrganization.Location" type="System.Drawing.Point, System.Drawing">
     <value>26, 22</value>
@@ -165,7 +165,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbOrganization.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="cmdDiagnosisBig.Location" type="System.Drawing.Point, System.Drawing">
     <value>964, 125</value>
@@ -189,7 +189,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmdDiagnosisBig.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="cmdDiagnosisLitt.Location" type="System.Drawing.Point, System.Drawing">
     <value>508, 125</value>
@@ -213,7 +213,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmdDiagnosisLitt.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="butSpendBio.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 378</value>
@@ -237,7 +237,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;butSpendBio.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="txtBResult.Location" type="System.Drawing.Point, System.Drawing">
     <value>26, 564</value>
@@ -265,7 +265,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtBResult.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="txtBPrepare.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 13.8pt</value>
@@ -289,7 +289,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtBPrepare.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <metadata name="dataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -316,7 +316,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dateCalendar.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -346,7 +346,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -379,7 +379,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -412,7 +412,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="rdoCategory1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -523,7 +523,55 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;rdoWith.Name" xml:space="preserve">
+    <value>rdoWith</value>
+  </data>
+  <data name="&gt;&gt;rdoWith.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoWith.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;rdoWith.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rdoWithout.Name" xml:space="preserve">
+    <value>rdoWithout</value>
+  </data>
+  <data name="&gt;&gt;rdoWithout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoWithout.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;rdoWithout.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>945, 178</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 133</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Тип матеріалу</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="rdoWith.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -582,30 +630,6 @@
   <data name="&gt;&gt;rdoWithout.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>945, 178</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 133</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Тип матеріалу</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="butSpendLittle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -631,7 +655,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;butSpendLittle.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="butSpendBig.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -658,7 +682,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;butSpendBig.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btnSetting.Location" type="System.Drawing.Point, System.Drawing">
     <value>910, 12</value>
@@ -682,7 +706,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSetting.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="cmdDiagnosisBio.Location" type="System.Drawing.Point, System.Drawing">
     <value>44, 125</value>
@@ -706,7 +730,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmdDiagnosisBio.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblCategoryOrg.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -736,6 +760,57 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCategoryOrg.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtDescription.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="txtDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>399, 304</value>
+  </data>
+  <data name="txtDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>540, 27</value>
+  </data>
+  <data name="txtDescription.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;txtDescription.Name" xml:space="preserve">
+    <value>txtDescription</value>
+  </data>
+  <data name="&gt;&gt;txtDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtDescription.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtDescription.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>577, 266</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 17</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Замітка (необов"язково)</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -745,7 +820,7 @@
     <value>1377, 823</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Вибір діагнозу</value>
+    <value> </value>
   </data>
   <data name="&gt;&gt;dataSet1.Name" xml:space="preserve">
     <value>dataSet1</value>

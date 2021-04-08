@@ -15,16 +15,16 @@ namespace Laboratory
 		
 		public DiagnosisAll() 
 		{
-			this.diagnosesBio = new List<Diagnosis>();
-			this.diagnosesLittle = new List<Diagnosis>();
-			this.diagnosesBig = new List<Diagnosis>();
+			diagnosesBio = new List<Diagnosis>();
+			diagnosesLittle = new List<Diagnosis>();
+			diagnosesBig = new List<Diagnosis>();
 		}
 
-		public DiagnosisAll(List<Diagnosis> diagnosesBio, List<Diagnosis> diagnosesLittle, List<Diagnosis> diagnosesBig)
+		public DiagnosisAll(List<Diagnosis> diagnosesBiol, List<Diagnosis> diagnosesLittlel, List<Diagnosis> diagnosesBigl)
 		{
-			this.diagnosesBio = diagnosesBio;
-			this.diagnosesLittle = diagnosesLittle;
-			this.diagnosesBig = diagnosesBig;
+			diagnosesBio = diagnosesBiol;
+			diagnosesLittle = diagnosesLittlel;
+			diagnosesBig = diagnosesBigl;
 		}
 
 		public void AddDiagnosesBio(Diagnosis diagnos)
@@ -34,6 +34,7 @@ namespace Laboratory
 			if (!exist)
 			{
 				diagnosesBio.Add(diagnos);
+				diagnosesBio = diagnosesBio.OrderBy(u => u.GetName()).ToList();
 			}
 		}
 
@@ -44,6 +45,7 @@ namespace Laboratory
 			if (!exist)
 			{
 				diagnosesLittle.Add(diagnos);
+				diagnosesLittle = diagnosesLittle.OrderBy(u => u.GetName()).ToList();
 			}
 		}
 
@@ -54,22 +56,23 @@ namespace Laboratory
 			if (!exist)
 			{
 				diagnosesBig.Add(diagnos);
+				diagnosesBig = diagnosesBig.OrderBy(u => u.GetName()).ToList();
 			}
 		}		
 
 		public void SetDiagnosesBio(List<Diagnosis> diagnoses)
-		{
-			this.diagnosesBio = diagnoses;
+		{			
+			diagnosesBio = diagnoses;
 		}
 
 		public void SetDiagnosesLittle(List<Diagnosis> diagnoses)
 		{
-			this.diagnosesLittle = diagnoses;
+			diagnosesLittle = diagnoses;
 		}
 
-		public void setDiagnosesBig(List<Diagnosis> diagnoses)
+		public void SetDiagnosesBig(List<Diagnosis> diagnoses)
 		{
-			this.diagnosesBig = diagnoses;
+			diagnosesBig = diagnoses;
 		}
 
 

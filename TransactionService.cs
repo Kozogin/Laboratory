@@ -12,11 +12,16 @@ namespace Laboratory
 	{
 		private List<Transaction> transactions;
 
-		public TransactionService() { }
+		public TransactionService() 
+		{
+			transactions = new List<Transaction>();
+		}
 
 		public void AddTransaction(Transaction transaction)
 		{
+
 			transactions.Add(transaction);
+
 		}
 
 		public void SaveTransaction()

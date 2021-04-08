@@ -10,7 +10,9 @@ namespace Laboratory
 	class Diagnosis
 	{
 		private string Name { get; set; }		
-		private string RecordDate { get; set; }		
+		private string RecordDate { get; set; }
+
+		public Diagnosis() { }
 
 		public Diagnosis(string name)
 		{

@@ -212,6 +212,7 @@
 			this.chkBig.TabIndex = 2;
 			this.chkBig.Text = "великий операційний";
 			this.chkBig.UseVisualStyleBackColor = true;
+			this.chkBig.CheckedChanged += new System.EventHandler(this.chkBig_CheckedChanged);
 			// 
 			// chkLittle
 			// 
@@ -222,6 +223,7 @@
 			this.chkLittle.TabIndex = 1;
 			this.chkLittle.Text = "малий операційний";
 			this.chkLittle.UseVisualStyleBackColor = true;
+			this.chkLittle.CheckedChanged += new System.EventHandler(this.chkLittle_CheckedChanged);
 			// 
 			// chkBiopsy
 			// 
@@ -232,6 +234,7 @@
 			this.chkBiopsy.TabIndex = 0;
 			this.chkBiopsy.Text = "біопсія";
 			this.chkBiopsy.UseVisualStyleBackColor = true;
+			this.chkBiopsy.CheckedChanged += new System.EventHandler(this.chkBiopsy_CheckedChanged);
 			// 
 			// cmbDeleteOrg
 			// 
@@ -268,6 +271,7 @@
 			this.btnDeleteOrg.TabIndex = 28;
 			this.btnDeleteOrg.Text = "Видалити";
 			this.btnDeleteOrg.UseVisualStyleBackColor = true;
+			this.btnDeleteOrg.Click += new System.EventHandler(this.btnDeleteOrg_Click);
 			// 
 			// btnDeleteCat
 			// 
@@ -277,6 +281,7 @@
 			this.btnDeleteCat.TabIndex = 29;
 			this.btnDeleteCat.Text = "Видалити";
 			this.btnDeleteCat.UseVisualStyleBackColor = true;
+			this.btnDeleteCat.Click += new System.EventHandler(this.btnDeleteCat_Click);
 			// 
 			// btnDeleteDia
 			// 
@@ -286,6 +291,7 @@
 			this.btnDeleteDia.TabIndex = 30;
 			this.btnDeleteDia.Text = "Видалити";
 			this.btnDeleteDia.UseVisualStyleBackColor = true;
+			this.btnDeleteDia.Click += new System.EventHandler(this.btnDeleteDia_Click);
 			// 
 			// CreateForm
 			// 

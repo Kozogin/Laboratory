@@ -53,6 +53,8 @@
 			this.btnSetting = new System.Windows.Forms.Button();
 			this.cmdDiagnosisBio = new System.Windows.Forms.ComboBox();
 			this.lblCategoryOrg = new System.Windows.Forms.Label();
+			this.txtDescription = new System.Windows.Forms.TextBox();
+			this.label4 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -77,33 +79,28 @@
 			this.cmdDiagnosisBig.FormattingEnabled = true;
 			resources.ApplyResources(this.cmdDiagnosisBig, "cmdDiagnosisBig");
 			this.cmdDiagnosisBig.Name = "cmdDiagnosisBig";
-			this.cmdDiagnosisBig.SelectedIndexChanged += new System.EventHandler(this.cmdCategory_SelectedIndexChanged);
 			// 
 			// cmdDiagnosisLitt
 			// 
 			this.cmdDiagnosisLitt.FormattingEnabled = true;
 			resources.ApplyResources(this.cmdDiagnosisLitt, "cmdDiagnosisLitt");
 			this.cmdDiagnosisLitt.Name = "cmdDiagnosisLitt";
-			this.cmdDiagnosisLitt.SelectedIndexChanged += new System.EventHandler(this.cmdDiagnosis_SelectedIndexChanged);
 			// 
 			// butSpendBio
 			// 
 			resources.ApplyResources(this.butSpendBio, "butSpendBio");
 			this.butSpendBio.Name = "butSpendBio";
 			this.butSpendBio.UseVisualStyleBackColor = true;
-			this.butSpendBio.Click += new System.EventHandler(this.butSpend_Click);
 			// 
 			// txtBResult
 			// 
 			resources.ApplyResources(this.txtBResult, "txtBResult");
 			this.txtBResult.Name = "txtBResult";
-			this.txtBResult.TextChanged += new System.EventHandler(this.txtBResult_TextChanged);
 			// 
 			// txtBPrepare
 			// 
 			resources.ApplyResources(this.txtBPrepare, "txtBPrepare");
 			this.txtBPrepare.Name = "txtBPrepare";
-			this.txtBPrepare.TextChanged += new System.EventHandler(this.txtBPrepare_TextChanged);
 			// 
 			// dataSet1
 			// 
@@ -114,7 +111,6 @@
 			resources.ApplyResources(this.dateCalendar, "dateCalendar");
 			this.dateCalendar.Name = "dateCalendar";
 			this.dateCalendar.Value = new System.DateTime(2021, 3, 14, 4, 0, 0, 0);
-			this.dateCalendar.ValueChanged += new System.EventHandler(this.dateCalendar_ValueChanged);
 			// 
 			// label1
 			// 
@@ -187,6 +183,7 @@
 			resources.ApplyResources(this.butSpendLittle, "butSpendLittle");
 			this.butSpendLittle.Name = "butSpendLittle";
 			this.butSpendLittle.UseVisualStyleBackColor = true;
+			this.butSpendLittle.Click += new System.EventHandler(this.butSpendLittle_Click);
 			// 
 			// butSpendBig
 			// 
@@ -206,16 +203,27 @@
 			this.cmdDiagnosisBio.FormattingEnabled = true;
 			resources.ApplyResources(this.cmdDiagnosisBio, "cmdDiagnosisBio");
 			this.cmdDiagnosisBio.Name = "cmdDiagnosisBio";
-			this.cmdDiagnosisBio.SelectedIndexChanged += new System.EventHandler(this.cmdDiagnosisBio_SelectedIndexChanged);
 			// 
 			// lblCategoryOrg
 			// 
 			resources.ApplyResources(this.lblCategoryOrg, "lblCategoryOrg");
 			this.lblCategoryOrg.Name = "lblCategoryOrg";
 			// 
+			// txtDescription
+			// 
+			resources.ApplyResources(this.txtDescription, "txtDescription");
+			this.txtDescription.Name = "txtDescription";
+			// 
+			// label4
+			// 
+			resources.ApplyResources(this.label4, "label4");
+			this.label4.Name = "label4";
+			// 
 			// MainForm
 			// 
 			resources.ApplyResources(this, "$this");
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.txtDescription);
 			this.Controls.Add(this.lblCategoryOrg);
 			this.Controls.Add(this.cmdDiagnosisBio);
 			this.Controls.Add(this.btnSetting);
@@ -275,6 +283,8 @@
 		private System.Windows.Forms.Button btnSetting;
 		private System.Windows.Forms.ComboBox cmdDiagnosisBio;
 		private System.Windows.Forms.Label lblCategoryOrg;
+		private System.Windows.Forms.TextBox txtDescription;
+		private System.Windows.Forms.Label label4;
 	}
 }
 
