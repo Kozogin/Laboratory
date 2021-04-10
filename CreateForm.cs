@@ -137,6 +137,7 @@ namespace Laboratory
 
 		private void GetDeleteCheked()
 		{
+			try { 
 			bool bio = chkBiopsy.Checked;
 			bool little = chkLittle.Checked;
 			bool big = chkBig.Checked;
@@ -169,7 +170,8 @@ namespace Laboratory
 			{
 				cmbDeleteDia.Items.Add(o);
 			}
-
+			}
+			catch (Exception ex) { }
 		}
 
 		private void btnDeleteCat_Click(object sender, EventArgs e)

@@ -42,8 +42,7 @@ namespace Laboratory
 		}
 
 		private void Save_Click(object sender, EventArgs e)
-		{
-			Console.Write("Save begin ");
+		{			
 			double p1 = 0;
 			double p2 = 0;
 			double p3 = 0;

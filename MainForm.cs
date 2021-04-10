@@ -13,7 +13,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Laboratory
 {
-	
+
 	public partial class MainForm : Form
 	{
 		private OrganizationService OrgServise;
@@ -35,19 +35,19 @@ namespace Laboratory
 			DiaAllService = new DiagnosisAllService();
 			traService = new TransactionService();
 			//f.BackColor = Color.Green;
-		}		
+		}
 
 		private void butAdd_Click(object sender, EventArgs e)
-		{			
+		{
 			CreateForm createForm = new CreateForm(this);
 			createForm.Show();
 		}
-		
+
 
 		private void MainForm_Activated(object sender, EventArgs e)
 		{
 			DiaAllService.ReadDiagnosis();
-			dateCalendar.Value = DateTime.Now;			
+			dateCalendar.Value = DateTime.Now;
 
 			cmbOrganization.Items.Clear();
 			foreach (Organization o in OrgServise.GetOrganizations())
@@ -85,6 +85,14 @@ namespace Laboratory
 			OrgServise.ReadOrganization();
 			DiaAllService.ReadDiagnosis();
 			traService.ReadTransaction();
+
+			List<Transaction> transactions = traService.GetTransactions();
+			//transactions = transactions.
+
+			int lastIndex = 0;
+			int countTransaction = traService.GetTransactions().Count();
+			lastIndex = traService.GetTransactions()[countTransaction - 1].GetId();
+			Transaction.SetCountId(lastIndex/10 + 1);
 		}
 
 		private void btnSetting_Click(object sender, EventArgs e)
@@ -93,67 +101,295 @@ namespace Laboratory
 			settingForm.Show();
 		}
 
-		
+		private void butSpendBio_Click(object sender, EventArgs e)
+		{
+			bool boolBioCat1 = rdoCategory1.Checked;
+			bool boolBioCat2 = rdoCategory2.Checked;
+			bool boolBioCat3 = rdoCategory3.Checked;
+			DateTime recordDate = dateCalendar.Value;
 
-		private void butSpendLittle_Click(object sender, EventArgs e){
+			if (cmbOrganization.SelectedIndex != -1 && cmdDiagnosisBio.SelectedIndex != -1)
+			{
+				string description = txtDescription.Text;
+				Organization org = OrgServise.FindByIndex(cmbOrganization.SelectedIndex);
+				Transaction transaction = new Transaction(); ;
 
-			string description = txtDescription.Text;
-			Organization org = OrgServise.FindByIndex(cmbOrganization.SelectedIndex);	
-			Diagnosis dia = DiaAllService.FindDiagnosByName(cmdDiagnosisLitt.SelectedText, TypeResearch.LittleOperation);
-			Transaction transaction = new Transaction(org, TypeResearch.LittleOperation, dia, description);
+				if (boolBioCat1)
+				{
+					Diagnosis dia = DiaAllService.FindDiagnosByName(cmdDiagnosisBio.SelectedIndex, TypeResearch.Category1);
+					
+					if (rdoTimeSys.Checked)
+					{
+						transaction = new Transaction(org, TypeResearch.Category1, dia, description);
+					}
+					if (rdoTimeChoice.Checked)
+					{
+						transaction = new Transaction(org, TypeResearch.Category1, dia, description, recordDate);
+					}
 
-			traService.AddTransaction(transaction);
-			traService.SaveTransaction();
 
-			cmbOrganization.Text = "Виберіть організацію";
-			cmdDiagnosisLitt.Text = "Виберіть діагноз";
-			txtDescription.Text = "";
+				}
+				if (boolBioCat2)
+				{
+					Diagnosis dia = DiaAllService.FindDiagnosByName(cmdDiagnosisBio.SelectedIndex, TypeResearch.Category2);
+					
+					if (rdoTimeSys.Checked)
+					{
+						transaction = new Transaction(org, TypeResearch.Category2, dia, description);
+					}
+					if (rdoTimeChoice.Checked)
+					{
+						transaction = new Transaction(org, TypeResearch.Category2, dia, description, recordDate);
+					}
+				}
+				if (boolBioCat3)
+				{
+					Diagnosis dia = DiaAllService.FindDiagnosByName(cmdDiagnosisBio.SelectedIndex, TypeResearch.Category3);
+					
+					if (rdoTimeSys.Checked)
+					{
+						transaction = new Transaction(org, TypeResearch.Category3, dia, description);
+					}
+					if (rdoTimeChoice.Checked)
+					{
+						transaction = new Transaction(org, TypeResearch.Category3, dia, description, recordDate);
+					}
+				}
+				if(txtInputID.Text != "")
+				{
+					try
+					{
+						transaction.SetId(Int16.Parse(txtInputID.Text));
+						txtInputID.Text = "";
+					}
+					catch (Exception ex) { }
+				}
+				traService.AddTransaction(transaction);
+				traService.SaveTransaction();
 
-			showTransaction();
+				showTransaction();
+			}
+		}
+
+		private void butSpendLittle_Click(object sender, EventArgs e)
+		{
+			DateTime recordDate = dateCalendar.Value;
+
+			if (cmbOrganization.SelectedIndex != -1 && cmdDiagnosisLitt.SelectedIndex != -1)
+			{
+				string description = txtDescription.Text;
+				Organization org = OrgServise.FindByIndex(cmbOrganization.SelectedIndex);
+				Diagnosis dia = DiaAllService.FindDiagnosByName(cmdDiagnosisLitt.SelectedIndex, TypeResearch.LittleOperation);
+
+				Transaction transaction = new Transaction();
+
+				if (rdoTimeSys.Checked)
+				{
+					transaction = new Transaction(org, TypeResearch.LittleOperation, dia, description);
+				}
+				if (rdoTimeChoice.Checked)
+				{
+					transaction = new Transaction(org, TypeResearch.LittleOperation, dia, description, recordDate);
+				}
+
+				if (txtInputID.Text != "")
+				{
+					try
+					{
+						transaction.SetId(Int16.Parse(txtInputID.Text));
+						txtInputID.Text = "";
+					}
+					catch (Exception ex) { }
+				}
+
+				traService.AddTransaction(transaction);
+				traService.SaveTransaction();
+
+				showTransaction();
+
+			}
+		}
+
+		private void butSpendBig_Click(object sender, EventArgs e)
+		{
+			bool boolWithout = rdoWithout.Checked;
+			bool boolWith = rdoWith.Checked;
+			DateTime recordDate = dateCalendar.Value;
+
+			if (cmbOrganization.SelectedIndex != -1 && cmdDiagnosisBig.SelectedIndex != -1)
+			{
+				string description = txtDescription.Text;
+				Organization org = OrgServise.FindByIndex(cmbOrganization.SelectedIndex);
+				Transaction transaction = new Transaction(); ;
+
+				if (boolWithout)
+				{
+					Diagnosis dia = DiaAllService.FindDiagnosByName(cmdDiagnosisBig.SelectedIndex, TypeResearch.BigOperationWithout);
+					if (rdoTimeSys.Checked)
+					{
+						transaction = new Transaction(org, TypeResearch.BigOperationWithout, dia, description);
+					}
+					if (rdoTimeChoice.Checked)
+					{
+						transaction = new Transaction(org, TypeResearch.BigOperationWithout, dia, description, recordDate);
+					}
+				}
+				else
+				{
+					Diagnosis dia = DiaAllService.FindDiagnosByName(cmdDiagnosisBig.SelectedIndex, TypeResearch.BigOperationWith);
+					if (rdoTimeSys.Checked)
+					{
+						transaction = new Transaction(org, TypeResearch.BigOperationWith, dia, description);
+					}
+					if (rdoTimeChoice.Checked)
+					{
+						transaction = new Transaction(org, TypeResearch.BigOperationWith, dia, description, recordDate);
+					}
+				}
+
+				if (txtInputID.Text != "")
+				{
+					try
+					{
+						transaction.SetId(Int16.Parse(txtInputID.Text));
+						txtInputID.Text = "";
+					}
+					catch (Exception ex) { }
+				}
+				traService.AddTransaction(transaction);
+				traService.SaveTransaction();
+
+				showTransaction();
+
+			}
 		}
 
 		private void cmbOrganization_SelectedIndexChanged(object sender, EventArgs e)
-		{			
-			lblCategoryOrg.Text = OrgServise.FindByIndex(cmbOrganization.SelectedIndex).GetCategory().GetName();
+		{
+			if (cmbOrganization.SelectedIndex != -1)
+			{
+				lblCategoryOrg.Text = OrgServise.FindByIndex(cmbOrganization.SelectedIndex).GetCategory().GetName();
+			}
+			else
+			{
+				lblCategoryOrg.Text = "";
+			}
+
 		}
 
 		private void showTransaction()
 		{
+			cmdDiagnosisBio.SelectedIndex = -1;
+			cmdDiagnosisLitt.SelectedIndex = -1;
+			cmdDiagnosisBig.SelectedIndex = -1;
+
+			cmdDiagnosisBio.Text = "Виберіть діагноз";
+			cmdDiagnosisLitt.Text = "Виберіть діагноз";
+			cmdDiagnosisBig.Text = "Виберіть діагноз";
+			txtDescription.Text = "";
+			lblCategoryOrg.Text = "";
+
 			txtBResult.Text = "";
 			string rezultText = "";
 			int lastIndexTransaction = traService.GetTransactions().Count() - 1;
 			int stopIndexTransaction = lastIndexTransaction - 50;
 			stopIndexTransaction = stopIndexTransaction < 0 ? 0 : stopIndexTransaction;
 
-			//try
-			//{
-				for (int i = lastIndexTransaction; i >= stopIndexTransaction; i--)
+
+			for (int i = lastIndexTransaction; i >= stopIndexTransaction; i--)
+			{
+				try
 				{
-					TypeResearch type = traService.GetTransactions()[i].GetTypeResearch();
+					Transaction transaction = traService.GetTransactions()[i];
+					TypeResearch type = transaction.GetTypeResearch();
 
-					string org = traService.GetTransactions()[i].GetOrganization().GetName();
-					string cat = traService.GetTransactions()[i].GetOrganization().GetCategory().GetName();
+					string id = transaction.GetId().ToString();
+					string org = transaction.GetOrganization().GetName();
+					string cat = transaction.GetOrganization().GetCategory().GetName();
 					string typ = DiaAllService.GetTypeResearchString(type);
-				string dia = "";
-					try
-					{
-						dia = traService.GetTransactions()[i].GetDiagnosis().GetName();
-					}
-					catch (Exception ex) { }
+					string dia = transaction.GetDiagnosis().GetName();
+					string price = transaction.GetPrice().ToString();
+					string descr = transaction.GetDescription();
+					string dat = transaction.GetRecordDate().ToString();
 
-				string price = traService.GetTransactions()[i].GetPrice().ToString();
-					string descr = traService.GetTransactions()[i].GetDescription();
-					string dat = traService.GetTransactions()[i].GetRecordDate().ToString();
-
-					rezultText += dat + "  <" + org + ">  (" + cat + ")  " + typ + "  " + dia + "  " + price + "грн.  " + descr + "\r\n";
+					rezultText += id + ",  - " + dat + "  <" + org + ">  (" + cat + ")  " + typ + "  " + dia + "  " + price + "грн.  " + descr + "\r\n";
 				}
-			//}
-			//catch (Exception ex) { }
+				catch (Exception ex) { }
+			}
 			txtBResult.Text = rezultText;
 		}
 
+		private void txtInputID_TextChanged(object sender, EventArgs e)
+		{
+			if (txtInputID.Text == "")
+			{
+				txtPrepare.Text = "";
+				txtInputPrice.Text = "";
+			}
+			try
+			{
+				int id = Int16.Parse(txtInputID.Text);
+				Transaction transaction = traService.FindById(id);
+				TypeResearch type = transaction.GetTypeResearch();
 
+				string org = transaction.GetOrganization().GetName();
+				string cat = transaction.GetOrganization().GetCategory().GetName();
+				string typ = DiaAllService.GetTypeResearchString(type);
+				string dia = transaction.GetDiagnosis().GetName();
+				string price = transaction.GetPrice().ToString();
+				string descr = transaction.GetDescription();
+				string dat = transaction.GetRecordDate().ToString();
+				txtDescription.Text = descr;
+				txtInputPrice.Text = price.ToString();
+				txtPrepare.Text = id.ToString() + ",  - " + dat + "  <" + org + ">  (" + cat + ")  " + typ + "  " + dia + "  " + price + "грн.  " + descr;
+			}
+			catch (Exception ex) { }
+		}
 
+		private void btnDeleteTransaction_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				int id = Int16.Parse(txtInputID.Text);
+			traService.DeleteById(id);
+			traService.SaveTransaction();
+			showTransaction();
+			txtPrepare.Text = "";
+			txtInputID.Text = "";
+			}
+			catch (Exception ex) { }
+		}
+
+		private void btnChange_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				int id = Int16.Parse(txtInputID.Text);
+				Transaction transaction = traService.FindById(id);
+				double price = GetDigit(txtInputPrice.Text);
+				string description = txtDescription.Text;
+
+				transaction.SetPrice(price);
+				transaction.SetDescription(description);
+				traService.SaveTransaction();
+				showTransaction();
+				txtPrepare.Text = "";
+				txtInputID.Text = "";
+			}
+			catch (Exception ex) { }
+			
+		}
+
+		private double GetDigit(string strDigit)
+		{
+			string handler = strDigit.Replace('.', ',').Trim();
+			double digit = 0;
+			try
+			{
+				digit = Double.Parse(handler);
+			}
+			catch (Exception ex) { }
+			return digit;
+		}
 	}
-	
 }

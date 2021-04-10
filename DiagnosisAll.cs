@@ -91,5 +91,10 @@ namespace Laboratory
 			return diagnosesBig;
 		}
 
+		public Diagnosis FindDiagnosLittleByName(string name, TypeResearch type)
+		{			
+			return diagnosesLittle.Find(o => o.GetName().Equals(name)); ;
+		}
+
 	}
 }

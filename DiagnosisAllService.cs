@@ -14,7 +14,7 @@ namespace Laboratory
 
 		public DiagnosisAllService()
 		{
-			//diagnosesAll = new DiagnosisAll();
+			diagnosesAll = new DiagnosisAll();
 		}
 
 		public void AddDiagnosis(String diagnosisStr, bool bio, bool little, bool big)
@@ -84,61 +84,49 @@ namespace Laboratory
 			SaveDiagnosis();
 		}
 
-		public Diagnosis FindDiagnosByName(string name, TypeResearch type)
+		public Diagnosis FindDiagnosByName(int index, TypeResearch type)
 		{
-			Diagnosis diagnos = new Diagnosis();	
-
+			Diagnosis diagnos = new Diagnosis();
+			try { 
 			switch (type)
 			{
 				case TypeResearch.Category1:
 				case TypeResearch.Category2:
 				case TypeResearch.Category3:
-					diagnos = diagnosesAll.GetDiagnosesBio().Find(o => o.GetName().Equals(name));
+					diagnos = diagnosesAll.GetDiagnosesBio()[index];
 					break;
 				case TypeResearch.LittleOperation:
-					//diagnos = diagnosesAll.GetDiagnosesLittle().Find(o => o.GetName().Equals(name));
-
-					Console.WriteLine("************************************************************************");
-
-					foreach (Diagnosis o in diagnosesAll.GetDiagnosesBio())
-					{
-						if (o.GetName().Equals(name))
-						{
-							diagnos = o;
-							Console.WriteLine(o.GetName());
-						}
-					}
-
-
-
+					diagnos = diagnosesAll.GetDiagnosesLittle()[index];
 					break;
 				case TypeResearch.BigOperationWithout:
 				case TypeResearch.BigOperationWith:
-					diagnos = diagnosesAll.GetDiagnosesBig().Find(o => o.GetName().Equals(name));
+					diagnos = diagnosesAll.GetDiagnosesBig()[index];
 					break;
 			}
-			Console.WriteLine("++++++++ "  + " ------------------------");
+			}
+			catch (Exception ex) { }
 			return diagnos;
 		}
 
 		public string GetTypeResearchString(TypeResearch type)
 		{
-			switch (type)
-			{
-				case TypeResearch.Category1:
-					return "біопсія категорія 1";					
-				case TypeResearch.Category2:
-					return "біопсія категорія 2";
-				case TypeResearch.Category3:
-					return "біопсія категорія 3";
-				case TypeResearch.LittleOperation:
-					return "малий операційний";
-				case TypeResearch.BigOperationWithout:
-					return "вевикий операційний без лімфовузлів";
-				case TypeResearch.BigOperationWith:
-					return "вевикий операційний з лімфовузлами";
-			}
 
+				switch (type)
+				{
+					case TypeResearch.Category1:
+						return "біопсія категорія 1";					
+					case TypeResearch.Category2:
+						return "біопсія категорія 2";
+					case TypeResearch.Category3:
+						return "біопсія категорія 3";
+					case TypeResearch.LittleOperation:
+						return "малий операційний";
+					case TypeResearch.BigOperationWithout:
+						return "великий операційний без лімфовузлів";
+					case TypeResearch.BigOperationWith:
+						return "вевикий операційний з лімфовузлами";
+				}
+			
 			return null;
 		}
 

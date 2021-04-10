@@ -61,7 +61,17 @@ namespace Laboratory
 			catch (Exception ex) { }
 			return null;
 		}
+
+		public Transaction FindById(int id)
+		{			
+			return transactions.Find(o => o.GetId() == id);
+		}
 		
+		public void DeleteById(int id)
+		{
+			transactions = transactions.FindAll(o => o.GetId() != id);
+		}
+
 		public List<Transaction> GetTransactions()
 		{
 			return transactions;

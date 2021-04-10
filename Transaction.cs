@@ -9,6 +9,8 @@ namespace Laboratory
 	[Serializable]
 	class Transaction
 	{		
+		private static int countId { get; set; }
+		private int Id { get; set; }
 		private Organization Org { get; set; }
 		private Category Cat { get; set; }
 		private TypeResearch Typ { get; set; }
@@ -20,7 +22,8 @@ namespace Laboratory
 		public Transaction() { }
 
 		public Transaction(Organization org, TypeResearch typ, Diagnosis dia, string description)
-		{	
+		{
+			this.Id = 10 * countId++;
 			this.Org = org;
 			this.Cat = Org.GetCategory();
 			this.Typ = typ;
@@ -30,12 +33,24 @@ namespace Laboratory
 			this.RecordDate = DateTime.Now;
 		}
 
-		private void ChoisePrice()
+		public Transaction(Organization org, TypeResearch typ, Diagnosis dia, string description, DateTime recordDate)
+		{
+			this.Id = 10 * countId++;
+			this.Org = org;
+			this.Cat = Org.GetCategory();
+			this.Typ = typ;
+			this.Dia = dia;
+			ChoisePrice();
+			this.Description = description;
+			this.RecordDate = recordDate;
+		}
+
+		public void ChoisePrice()
 		{
 			SettingLabService SetService = new SettingLabService();
 			SetService.ReadSettingLab();
-			//try
-			//{
+			try
+			{
 				switch (Typ)
 				{
 					case TypeResearch.Category1:
@@ -60,16 +75,24 @@ namespace Laboratory
 						this.price = 0;
 						break;
 				}
-			//}
-			//catch (Exception ex) { }
+			}
+			catch (Exception ex) { }
 		}
-
+		public static void SetCountId(int count)
+		{
+			countId = count;
+		}
 		public void SetOrganization(Organization org)
 		{
 			this.Org = org;
 			this.Cat = Org.GetCategory();
 		}
 
+		public void SetId(int id)
+		{
+			this.Id = id;
+			
+		}
 		public void SetCategory()
 		{
 			this.Cat = Org.GetCategory();
@@ -96,6 +119,10 @@ namespace Laboratory
 		public void SetDescription(string description)
 		{
 			this.Description = description;
+		}
+		public int GetId()
+		{
+			return Id;
 		}
 		public Organization GetOrganization()
 		{
