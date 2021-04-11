@@ -87,7 +87,9 @@ namespace Laboratory
 			traService.ReadTransaction();
 
 			List<Transaction> transactions = traService.GetTransactions();
-			//transactions = transactions.
+			transactions = transactions.OrderBy(o => o.GetId()).ToList();
+			traService.SetTransaction(transactions);
+
 
 			int lastIndex = 0;
 			int countTransaction = traService.GetTransactions().Count();
@@ -390,6 +392,14 @@ namespace Laboratory
 			}
 			catch (Exception ex) { }
 			return digit;
+		}
+
+		private void btnSort_Click(object sender, EventArgs e)
+		{
+			List<Transaction> transactions = traService.GetTransactions();
+			transactions = transactions.OrderBy(o => o.GetId()).ToList();
+			traService.SetTransaction(transactions);
+			showTransaction();
 		}
 	}
 }

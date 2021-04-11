@@ -63,8 +63,9 @@
 			this.btnChange = new System.Windows.Forms.Button();
 			this.btnDeleteTransaction = new System.Windows.Forms.Button();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.rdoTimeChoice = new System.Windows.Forms.RadioButton();
 			this.rdoTimeSys = new System.Windows.Forms.RadioButton();
+			this.rdoTimeChoice = new System.Windows.Forms.RadioButton();
+			this.btnSort = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -281,22 +282,31 @@
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.TabStop = false;
 			// 
+			// rdoTimeSys
+			// 
+			resources.ApplyResources(this.rdoTimeSys, "rdoTimeSys");
+			this.rdoTimeSys.Checked = true;
+			this.rdoTimeSys.Name = "rdoTimeSys";
+			this.rdoTimeSys.TabStop = true;
+			this.rdoTimeSys.UseVisualStyleBackColor = true;
+			// 
 			// rdoTimeChoice
 			// 
 			resources.ApplyResources(this.rdoTimeChoice, "rdoTimeChoice");
 			this.rdoTimeChoice.Name = "rdoTimeChoice";
 			this.rdoTimeChoice.UseVisualStyleBackColor = true;
 			// 
-			// rdoTimeSys
+			// btnSort
 			// 
-			resources.ApplyResources(this.rdoTimeSys, "rdoTimeSys");
-			this.rdoTimeSys.Checked = true;
-			this.rdoTimeSys.Name = "rdoTimeSys";
-			this.rdoTimeSys.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.btnSort, "btnSort");
+			this.btnSort.Name = "btnSort";
+			this.btnSort.UseVisualStyleBackColor = true;
+			this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
 			// 
 			// MainForm
 			// 
 			resources.ApplyResources(this, "$this");
+			this.Controls.Add(this.btnSort);
 			this.Controls.Add(this.groupBox3);
 			this.Controls.Add(this.btnDeleteTransaction);
 			this.Controls.Add(this.btnChange);
@@ -379,6 +389,7 @@
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.RadioButton rdoTimeSys;
 		private System.Windows.Forms.RadioButton rdoTimeChoice;
+		private System.Windows.Forms.Button btnSort;
 	}
 }
 
