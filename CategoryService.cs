@@ -51,6 +51,12 @@ namespace Laboratory
 
 		}
 
+		public void DeleteCategory(string categoryStr)
+		{
+			categories = categories.FindAll(o => !o.GetName().Equals(categoryStr)).ToList();
+			SaveCategory();
+		}
+
 		public Category FindByIndex(int index)
 		{
 			Category category = new Category();

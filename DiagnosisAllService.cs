@@ -64,12 +64,76 @@ namespace Laboratory
 
 			return diagnosesAll;
 
+		}		
+
+		public void DeleteDiagnosis(string diagnosisStr, bool bio, bool little, bool big)
+		{	
+			if (bio)
+			{
+				diagnosesAll.SetDiagnosesBio(diagnosesAll.GetDiagnosesBio().FindAll(o => !o.GetName().Equals(diagnosisStr)).ToList());
+			}
+			if (little)
+			{
+				diagnosesAll.SetDiagnosesLittle(diagnosesAll.GetDiagnosesLittle().FindAll(o => !o.GetName().Equals(diagnosisStr)).ToList());
+			}
+			if (big)
+			{				
+				diagnosesAll.SetDiagnosesBig(diagnosesAll.GetDiagnosesBig().FindAll(o => !o.GetName().Equals(diagnosisStr)).ToList());
+			}
+
+			SaveDiagnosis();
 		}
 
-		/*public DiagnosisAll GetDiagnosisAll()
+		public Diagnosis FindDiagnosByName(int index, TypeResearch type)
+		{
+			Diagnosis diagnos = new Diagnosis();
+			try { 
+			switch (type)
+			{
+				case TypeResearch.Category1:
+				case TypeResearch.Category2:
+				case TypeResearch.Category3:
+					diagnos = diagnosesAll.GetDiagnosesBio()[index];
+					break;
+				case TypeResearch.LittleOperation:
+					diagnos = diagnosesAll.GetDiagnosesLittle()[index];
+					break;
+				case TypeResearch.BigOperationWithout:
+				case TypeResearch.BigOperationWith:
+					diagnos = diagnosesAll.GetDiagnosesBig()[index];
+					break;
+			}
+			}
+			catch (Exception ex) { }
+			return diagnos;
+		}
+
+		public string GetTypeResearchString(TypeResearch type)
+		{
+
+				switch (type)
+				{
+					case TypeResearch.Category1:
+						return "біопсія категорія 1";					
+					case TypeResearch.Category2:
+						return "біопсія категорія 2";
+					case TypeResearch.Category3:
+						return "біопсія категорія 3";
+					case TypeResearch.LittleOperation:
+						return "малий операційний";
+					case TypeResearch.BigOperationWithout:
+						return "великий операційний без лімфовузлів";
+					case TypeResearch.BigOperationWith:
+						return "вевикий операційний з лімфовузлами";
+				}
+			
+			return null;
+		}
+
+		public DiagnosisAll GetDiagnosisAll()
 		{
 			return diagnosesAll;
-		}*/
+		}
 
 
 	}

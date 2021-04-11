@@ -21,7 +21,8 @@ namespace Laboratory
 		public void AddOrganization(String organizationStr, Category category)
 		{
 			Organization organization = new Organization(organizationStr, category);
-			organizations.Add(organization);			
+			organizations.Add(organization);
+			organizations = organizations.OrderBy(u => u.GetName()).ToList();
 		}
 
 		public void SaveOrganization()
@@ -49,6 +50,12 @@ namespace Laboratory
 				}
 				catch (Exception ex) { }
 			}			
+		}
+
+		public void DeleteOrganization(string organizationStr)
+		{
+			organizations = organizations.FindAll(o => !o.GetName().Equals(organizationStr)).ToList();
+			SaveOrganization();
 		}
 
 		public List<Organization> GetOrganizations()

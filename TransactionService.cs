@@ -12,11 +12,16 @@ namespace Laboratory
 	{
 		private List<Transaction> transactions;
 
-		public TransactionService() { }
+		public TransactionService()
+		{
+			transactions = new List<Transaction>();
+		}
 
 		public void AddTransaction(Transaction transaction)
 		{
+
 			transactions.Add(transaction);
+
 		}
 
 		public void SaveTransaction()
@@ -56,11 +61,26 @@ namespace Laboratory
 			catch (Exception ex) { }
 			return null;
 		}
-		
+
+		public Transaction FindById(int id)
+		{
+			return transactions.Find(o => o.GetId() == id);
+		}
+
+		public void DeleteById(int id)
+		{
+			transactions = transactions.FindAll(o => o.GetId() != id);
+		}
+
+		public void SetTransaction(List<Transaction> trans)
+		{
+			this.transactions = trans;
+		}
+
 		public List<Transaction> GetTransactions()
 		{
 			return transactions;
 		}
-		
+
 	}
 }

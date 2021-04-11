@@ -85,8 +85,7 @@
 			this.txtCategory1.Location = new System.Drawing.Point(183, 140);
 			this.txtCategory1.Name = "txtCategory1";
 			this.txtCategory1.Size = new System.Drawing.Size(100, 22);
-			this.txtCategory1.TabIndex = 14;
-			this.txtCategory1.TextChanged += new System.EventHandler(this.txtCategory1_TextChanged);
+			this.txtCategory1.TabIndex = 14;			
 			// 
 			// txtCategory2
 			// 
